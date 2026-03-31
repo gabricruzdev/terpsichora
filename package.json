@@ -1,0 +1,62 @@
+{
+  "name": "terpsichora",
+  "version": "1.0.3",
+  "description": "Stream browser audio (YouTube, Spotify) to Discord voice channels",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "sign:electron": "node scripts/sign-electron.js",
+    "sign:build": "node scripts/sign-electron.js dist/win-unpacked",
+    "build:icons": "node scripts/build-icons.js",
+    "build": "npm run build:icons && electron-builder",
+    "build:win": "npm run build:icons && electron-builder --win"
+  },
+  "author": "gabricruzdev",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "https://github.com/castlabs/electron-releases/archive/refs/tags/v38.8.4%2Bwvcus.tar.gz",
+    "electron-builder": "^24.9.1",
+    "sharp": "^0.34.5",
+    "to-ico": "^1.1.5"
+  },
+  "dependencies": {
+    "@discordjs/voice": "^0.19.0",
+    "@snazzah/davey": "^0.1.10",
+    "discord.js": "^14.25.1",
+    "libsodium-wrappers": "^0.8.2",
+    "opusscript": "^0.1.1",
+    "prism-media": "^1.3.5",
+    "ws": "^8.19.0"
+  },
+  "build": {
+    "appId": "com.terpsichora.app",
+    "productName": "Terpsichora",
+    "electronDist": "node_modules/electron/dist",
+    "afterSign": "./scripts/afterPack.js",
+    "icon": "build/icon.ico",
+    "asar": true,
+    "compression": "maximum",
+    "extraResources": [
+      { "from": "build/icon.ico", "to": "icon.ico" },
+      { "from": "build/icon.png", "to": "icon.png" }
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!dist",
+      "!node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+      "!node_modules/*/{test,__tests__,tests,powered-test,example,examples}",
+      "!node_modules/*.d.ts",
+      "!node_modules/.bin",
+      "!**/*.map"
+    ],
+    "win": {
+      "target": [
+        "portable",
+        "nsis"
+      ]
+    }
+  }
+}

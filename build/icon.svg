@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="512" height="512">
+  <!-- Simple mouse silhouette facing right - bold shapes for small sizes -->
+  <!-- Body -->
+  <ellipse cx="12" cy="16" rx="7" ry="9" fill="white"/>
+  <!-- Head -->
+  <ellipse cx="22" cy="16" rx="5" ry="6" fill="white"/>
+  <!-- Ear -->
+  <circle cx="24" cy="10" r="3" fill="white"/>
+  <!-- Tail -->
+  <path d="M4 17 Q0 16 2 20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+</svg>
