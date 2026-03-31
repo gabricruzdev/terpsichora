@@ -1,5 +1,15 @@
 # Terpsichora
 
+[![GitHub release](https://img.shields.io/github/v/release/gabricruzdev/terpsichora?label=version&logo=github)](https://github.com/gabricruzdev/terpsichora/releases)
+[![License](https://img.shields.io/badge/license-MIT-22c55e)](https://opensource.org/licenses/MIT)
+[![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+
+[![Electron](https://img.shields.io/badge/Electron-Chromium-47848F?logo=electron&logoColor=white)](https://www.electronjs.org/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES2020-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/docs/Web/JavaScript)
+[![discord.js](https://img.shields.io/badge/discord.js-voice-5865F2?logo=discord&logoColor=white)](https://discord.js.org/)
+[![ws](https://img.shields.io/badge/ws-WebSocket-4A90A4)](https://github.com/websockets/ws)
+[![Opus](https://img.shields.io/badge/Opus-audio-9B59B6)](https://opus-codec.org/)
+
 **Version 1.0.3**
 
 **Just want the executable?** → [Download the latest release](https://github.com/gabricruzdev/terpsichora/releases) (portable or installer).
@@ -7,6 +17,16 @@
 Stream browser audio to Discord voice channels. Play YouTube, Spotify, or any website directly in a voice channel — no VB-Cable, no FFmpeg, no external drivers needed.
 
 **by gabricruzdev**
+
+## Tech stack
+
+| Area | Technologies |
+|------|----------------|
+| **Desktop shell** | [Electron](https://www.electronjs.org/) (CastLabs build with Widevine for Spotify), [Node.js](https://nodejs.org/) 18+ |
+| **Discord** | [discord.js](https://discord.js.org/), [@discordjs/voice](https://github.com/discordjs/voice), [@snazzah/davey](https://github.com/snazzah/davey) (voice encryption) |
+| **Audio pipeline** | Tab capture in renderer ([`getDisplayMedia`](https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia) + **AudioWorklet**), [WebSocket](https://github.com/websockets/ws) to main process, [prism-media](https://github.com/discordjs/prism-media) + [opusscript](https://github.com/abalabahaha/opusscript) for Opus, [libsodium-wrappers](https://github.com/jedisct1/libsodium.js) |
+| **UI** | HTML, CSS, vanilla JavaScript (`ui/`) |
+| **Packaging** | [electron-builder](https://www.electron.build/) (portable + NSIS), [sharp](https://sharp.pixelplumbing.com/) / [to-ico](https://www.npmjs.com/package/to-ico) for icons |
 
 ## Features
 
